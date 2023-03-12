@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>Hesap Makinesi</title>
+    <link rel="shortcut icon" type="image/png" href="https://i.pinimg.com/564x/de/1f/47/de1f47ef606f3c8c2e351f0476fac67f.jpg">
+  </head>
+  <body>
+    <h1 style="text-align: center; border: 5px solid yellow;background-color:red ; width: 410px">
+      Hesap Makinesi
+    </h1>
+    <table>
+      <tr>
+        <td colspan="3">
+          <input type="text" id="hesap" />
+        </td>
+        <td>
+          <input type="button" class="isaretler" value="C" onclick='c("")' />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" class="butonlar" value="1" onclick='v("1")' />
+        </td>
+        <td>
+          <input type="button" class="butonlar" value="2" onclick='v("2")' />
+        </td>
+        <td>
+          <input type="button" class="butonlar" value="3" onclick='v("3")' />
+        </td>
+        <td>
+          <input type="button" class="isaretler" value="/" onclick='v("/")' />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" class="butonlar" value="4" onclick='v("4")' />
+        </td>
+        <td>
+          <input type="button" class="butonlar" value="5" onclick='v("5")' />
+        </td>
+        <td>
+          <input type="button" class="butonlar" value="6" onclick='v("6")' />
+        </td>
+        <td>
+          <input type="button" class="isaretler" value="-" onclick='v("-")' />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" class="butonlar" value="7" onclick='v("7")' />
+        </td>
+        <td>
+          <input type="button" class="butonlar" value="8" onclick='v("8")' />
+        </td>
+        <td>
+          <input type="button" class="butonlar" value="9" onclick='v("9")' />
+        </td>
+        <td>
+          <input type="button" class="isaretler" value="+" onclick='v("+")' />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" class="butonlar" value="." onclick='v(".")' />
+        </td>
+        <td>
+          <input type="button" class="butonlar" value="0" onclick='v("0")' />
+        </td>
+        <td>
+          <input type="button" class="butonlar" value="=" onclick="e()" />
+        </td>
+        <td>
+          <input type="button" class="isaretler" value="*" onclick='v("*")' />
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function c(val) {
+        document.getElementById('hesap').value = val;
+      }
+      function v(val) {
+        document.getElementById('hesap').value += val;
+      }
+      function e() {
+        try {
+          c(eval(document.getElementById('hesap').value));
+        } catch (e) {
+          c('Error');
+        }
+      }
+    </script>
+
+    <br> <br> 
+
+  </body>
+</html>
